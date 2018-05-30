@@ -12,7 +12,6 @@ void setup () {
     Serial.println(F("Failed to access Ethernet controller"));
     Serial.begin(9600);
     pinMode(A0,INPUT);
-    pinMode(7,OUTPUT);
   ether.staticSetup(myip);
 }
 int prehoz (char a[7])
