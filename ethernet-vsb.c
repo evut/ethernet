@@ -12,16 +12,16 @@ void setup () {
     Serial.println(F("Failed to access Ethernet controller"));
     Serial.begin(9600);
     pinMode(A0,INPUT);
+    pinMode(7,OUTPUT);
   ether.staticSetup(myip);
 }
 int prehoz (char a[7])
 {
-  int pote=map(analogRead(A0),0,690,1,3);
   int potenciometr=analogRead(A0);
   char potemax[]= {'M','A','X','I','M','U','M'}; 
   char poteprubeh[] {'P','R','U','B','E','H',' '};
   char potemin[]= {'M','I','N','I','M','U','M'}; 
-    if (pote == 3)
+    if (potenciometr >683)
     {
       int number;
       for(number=0;number<7;number++)
